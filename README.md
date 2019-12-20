@@ -28,11 +28,41 @@ In this project you will create a login page and request a token from the server
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] Explain what a token is used for.
-- [ ] What steps can you take in your web apps to keep your data secure?
-- [ ] Describe how web servers work.
-- [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+**Explain what a token is used for.**
 
+JSON web tokens are a way to ‘represent claims securely between 2 parties.’ They are encrypted strings that are an object when decoded. They can be issued from a server once a user logs in. Then each subsequent request can include the token (such as in the header as the value of the Authorization prop) to access routes, services and resources that are only allowed with the token.
+
+**What steps can you take in your web apps to keep your data secure?**
+
+1. We should use client-side authentication whenever possible, with authentication through tokens or cookies, and with private routes. It’s recommended to use tokens with expiry policies.
+
+2. I’ve also read that we should avoid vulnerable third-party React component libraries and, of course, vulnerable versions of React.
+
+3. We should avoid dangerouslySetInnerHTML().
+
+4. React encodes almost all data values when creating DOM elements, but it doesn’t have that same level of security when links or components are created from user input. So be aware of that.
+
+5. The documentation for JSON web tokens recommend that we shouldn’t keep tokens longer than required, and discourages storing sensitive session data in browser storage.
+
+6. When coding the backend that creates tokens, we shouldn’t put secret information a token’s payload or header elements unless it encrypted.  JSON web tokens should be a good choice to use because they can be signed, so you can be sure the senders are who they claim to be. Also, the third part of the string is the signature, made using the encrypted header, encrypted payload and the secret. It verifies that the message wasn’t changed along the way.
+
+7. Another thing to consider is using Angular, instead of React, because it seems to have more secure coding support. (https://snyk.io/blog/comparing-react-and-angular-secure-coding-practices/). In general, it’s recommended to use application security tools to continuously check our code for security vulnerabilities.
+
+8. Finally, it’s recommended to separate sensitive data, such as credit card data, to a secure zone, such as a component that can be tightly controlled and locked down as much as possible.
+
+**Describe how web servers work.**
+
+Web servers, the actual computer type, stores the code needed for websites to work and therefore, ‘host’ websites. The code is also known as a web server. It receives requests sent by users’ browsers, when the browser connects the user’s computer to the server through the web server (the computer’s) IP address. The IP address is found by the browser using a DNS server, or other resource, that maps domain names to IP addresses. Then the web server can send data for the website back to the browser to use.
+
+**Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.**
+
+**C:** Create → POST
+
+**R:** Read → GET
+
+**U:** Update → POST
+
+**D:** Delete → DELETE
 
 ## Project Set Up
 
