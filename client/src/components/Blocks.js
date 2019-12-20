@@ -29,8 +29,13 @@ const Blocks = props => {
     setBlocksData(generateBlocksData);
   }, [colorList]);
 
+    const handleClick = e => {
+        props.history.push('/bubbles');
+    }
+    
     return (
         <div>
+            <button onClick={handleClick}>back to bubbles</button>
             <h2>blocks</h2>
             <div className='blocks-display'>
                 <div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Pack } from "@potion/layout";
 import { Svg, Circle } from "@potion/element";
 
-const Bubbles = ({ colors }) => {
+const Bubbles = ({ colors, history }) => {
   const [bubbleData, setBubbleData] = useState([]);
   useEffect(() => {
     const generateBubbleData = colors.map((_, i) => ({
@@ -12,9 +12,15 @@ const Bubbles = ({ colors }) => {
     setBubbleData(generateBubbleData);
   }, [colors]);
 
+  const handleClick = e => {
+    e.preventDefault();
+    history.push('/blocks');
+  }
+
   return (
     <div className="bubble-wrap">
       <p>bubbles</p>
+      <button onClick={handleClick} style={{'width': '25%', 'margin': '1rem auto'}}>see squares</button>
       <Svg width={400} height={400}>
         <Pack
           data={{
