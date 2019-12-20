@@ -97,3 +97,16 @@ form {
     margin-top: 16px;
   }
 }
+
+.blocks-display {
+  margin: 1rem auto;
+  width: 100vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.blocks-display div {
+  width: 48%;
+}
