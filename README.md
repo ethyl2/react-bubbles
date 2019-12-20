@@ -48,7 +48,9 @@ JSON web tokens are a way to ‘represent claims securely between 2 parties.’ 
 
 7. Another thing to consider is using Angular, instead of React, because it seems to have more secure coding support. (https://snyk.io/blog/comparing-react-and-angular-secure-coding-practices/). In general, it’s recommended to use application security tools to continuously check our code for security vulnerabilities.
 
-8. Finally, it’s recommended to separate sensitive data, such as credit card data, to a secure zone, such as a component that can be tightly controlled and locked down as much as possible.
+8. When creating the backend with node.js, we can use middleware like HelmetJS (https://helmetjs.github.io/), which automatically sets HTTP headers to prevent sensitive info from unintentionally being passed between a server and client.
+
+9. Finally, it’s recommended to separate sensitive data, such as credit card data, to a secure zone, such as in a component that can be tightly controlled and locked down as much as possible.
 
 **Describe how web servers work.**
 
